@@ -1,0 +1,19 @@
+通过swagger-ui暴露出标准的web api接口
+分层对象规划
+分页查询
+短信服务
+邮件服务
+日志
+rabbit mq
+缓存的使用
+用户权限
+调用栈顺序监控
+
+不同的profile使用不同的配置文件
+增加多个不同的数据源
+
+技术
+springboot
+mybatis
+thymeleaf
+bootstrap

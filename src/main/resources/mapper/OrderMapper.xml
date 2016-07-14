@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.redq.latte.dal.OrderMapper" >
+  <resultMap id="BaseResultMap" type="com.redq.latte.model.Order" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="order_no" property="orderNo" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="product_source" property="productSource" jdbcType="VARCHAR" />
+    <result column="buyer_id" property="buyerId" jdbcType="BIGINT" />
+    <result column="seller_id" property="sellerId" jdbcType="BIGINT" />
+    <result column="shop_id" property="shopId" jdbcType="VARCHAR" />
+    <result column="shop_name" property="shopName" jdbcType="VARCHAR" />
+    <result column="address_id" property="addressId" jdbcType="BIGINT" />
+    <result column="goods_fee" property="goodsFee" jdbcType="INTEGER" />
+    <result column="logistics_fee" property="logisticsFee" jdbcType="INTEGER" />
+    <result column="discount_fee" property="discountFee" jdbcType="INTEGER" />
+    <result column="total_fee" property="totalFee" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="paid_at" property="paidAt" jdbcType="TIMESTAMP" />
+    <result column="paid_status" property="paidStatus" jdbcType="VARCHAR" />
+    <result column="shipped_at" property="shippedAt" jdbcType="TIMESTAMP" />
+    <result column="domain" property="domain" jdbcType="INTEGER" />
+    <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+    <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
+    <result column="archive" property="archive" jdbcType="BIT" />
+  </resultMap>
+  
+</mapper>
