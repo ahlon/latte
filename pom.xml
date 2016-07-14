@@ -4,18 +4,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.redq</groupId>
-	<artifactId>latte-demo</artifactId>
+	<artifactId>latte</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>latte-demo</name>
-	<description>demo project for latte framework</description>
+	<name>latte</name>
+	<description>latte is a java framework for e-commerce</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.2.5.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath />
 	</parent>
 
 	<properties>
@@ -203,6 +203,5 @@
                 <profiles.active>prod</profiles.active>
             </properties>
         </profile>
-        
     </profiles>
 </project>
