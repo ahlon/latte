@@ -15,9 +15,9 @@ import org.springframework.core.io.Resource;
 
 import com.redq.latte.dal.OrderMapper;
 
-@Configuration
-@ImportResource({"classpath:config/applicationContext-dal.xml"})
-@PropertySource({"classpath:application.properties", "classpath:application-${spring.profiles.active}.properties"})
+// @Configuration
+// @ImportResource({"classpath:config/applicationContext-dal.xml"})
+// @PropertySource({"classpath:application.properties", "classpath:application-${spring.profiles.active}.properties"})
 // @MapperScan("com.qf.trade.dal")
 public class QfDalConfig {
 	

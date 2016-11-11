@@ -18,7 +18,7 @@ public class OrderServiceImpl extends BaseService implements OrderService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
+    // @Autowired
     private OrderMapper orderMapper;
     
     @Override

@@ -29,7 +29,8 @@
 		<property name="password"><value><![CDATA[${jdbc.password}]]></value></property>
 	</bean>
 	
-	<bean id="qfDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" >  
+	
+	<!-- <bean id="qfDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" >  
         <property name="minPoolSize" value="${jdbc.minPoolSize}" />
         <property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
         <property name="acquireIncrement" value="${jdbc.acquireIncrement}" />
@@ -45,7 +46,7 @@
         <property name="jdbcUrl" value="${qf.jdbc.url}" />
         <property name="user" value="${qf.jdbc.username}" />
         <property name="password"><value><![CDATA[${qf.jdbc.password}]]></value></property>
-    </bean>
+    </bean> -->
 	
 	<!-- <bean id="springContextUtil"  class="com.vdlm.dal.util.SpringContextUtil" lazy-init="false">
 	</bean> -->

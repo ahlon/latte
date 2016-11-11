@@ -4,9 +4,9 @@
 	<contextName>spring-boot-starter</contextName>
 
 	<appender name="LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-	    <file>/ouer/logs/${LOG_FILE_NAME}.log</file>
+	    <file>${user.dir}/logs/${LOG_FILE_NAME}.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<FileNamePattern>/ouer/logs/%d{yyyy-MM-dd}/${LOG_FILE_NAME}.%i.log</FileNamePattern>
+			<FileNamePattern>${user.dir}/logs/%d{yyyy-MM-dd}/${LOG_FILE_NAME}.%i.log</FileNamePattern>
 			<MaxHistory>100</MaxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 		        <!-- or whenever the file size reaches 100MB -->
@@ -20,9 +20,9 @@
 	</appender>
 	
 	<appender name="ERROR_LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/ouer/logs/${LOG_FILE_NAME}-error.log</file>
+        <file>${user.dir}/logs/${LOG_FILE_NAME}-error.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>/ouer/logs/%d{yyyy-MM-dd}/${LOG_FILE_NAME}-error.%i.log</FileNamePattern>
+            <FileNamePattern>${user.dir}/logs/%d{yyyy-MM-dd}/${LOG_FILE_NAME}-error.%i.log</FileNamePattern>
             <MaxHistory>100</MaxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <!-- or whenever the file size reaches 100MB -->
