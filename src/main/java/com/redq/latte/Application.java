@@ -14,10 +14,14 @@ public class Application {
     private static Logger logger = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
+    	System.out.println("user.dir : "+System.getProperty("user.dir"));
+    	System.out.println("user.home : "+System.getProperty("user.home"));
+    	
         ApplicationContext ctx = SpringApplication.run(Application.class, args);  
         String[] activeProfiles = ctx.getEnvironment().getActiveProfiles();  
         for (String profile : activeProfiles) {
-            logger.warn("Spring Boot using profile:{}" , profile);
-        }  
+            logger.info("Spring Boot using profile:{}" , profile);
+        }
+        
     }
 }

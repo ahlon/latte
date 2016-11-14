@@ -14,6 +14,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.Resource;
 
 import com.redq.latte.dal.TermMapper;
+import com.redq.latte.dal.UserMapper;
 
 @Configuration
 @ImportResource({"classpath:config/applicationContext-dal.xml"})
@@ -56,6 +57,11 @@ public class DalConfig {
     @Bean
     public TermMapper termMapper() throws Exception {
         return newMapperFactoryBean(TermMapper.class).getObject();
+    }
+    
+    @Bean
+    public UserMapper userMapper() throws Exception {
+        return newMapperFactoryBean(UserMapper.class).getObject();
     }
 	
 }

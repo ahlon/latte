@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration scan="true" scanPeriod="10 minutes">
-    <property name="LOG_FILE_NAME" value="spring-boot-starter" />   
-	<contextName>spring-boot-starter</contextName>
+    <property name="LOG_FILE_NAME" value="${app.name}" />   
+	<contextName>${app.name}</contextName>
 
 	<appender name="LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-	    <file>${user.dir}/logs/${LOG_FILE_NAME}.log</file>
+	    <file>${user.home}/logs/${LOG_FILE_NAME}.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<FileNamePattern>${user.dir}/logs/%d{yyyy-MM-dd}/${LOG_FILE_NAME}.%i.log</FileNamePattern>
+			<FileNamePattern>${user.home}/logs/%d{yyyy-MM-dd}/${LOG_FILE_NAME}.%i.log</FileNamePattern>
 			<MaxHistory>100</MaxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 		        <!-- or whenever the file size reaches 100MB -->
@@ -20,9 +20,9 @@
 	</appender>
 	
 	<appender name="ERROR_LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${user.dir}/logs/${LOG_FILE_NAME}-error.log</file>
+        <file>${user.home}/logs/${LOG_FILE_NAME}-error.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${user.dir}/logs/%d{yyyy-MM-dd}/${LOG_FILE_NAME}-error.%i.log</FileNamePattern>
+            <FileNamePattern>${user.home}/logs/%d{yyyy-MM-dd}/${LOG_FILE_NAME}-error.%i.log</FileNamePattern>
             <MaxHistory>100</MaxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <!-- or whenever the file size reaches 100MB -->

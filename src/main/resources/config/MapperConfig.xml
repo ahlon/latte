@@ -8,6 +8,7 @@
 	<mappers>
 		<mapper resource="mapper/OrderMapper.xml" />
 		<mapper resource="mapper/TermMapper.xml" />
+		<mapper resource="mapper/UserMapper.xml" />
 	</mappers>
 	
 </configuration>

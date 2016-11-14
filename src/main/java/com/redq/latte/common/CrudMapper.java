@@ -12,7 +12,7 @@ public interface CrudMapper<E extends BaseEntity> {
 
     int insert(E record);
     
-    E selectById(Long id);
+    E selectById(@Param("id") Long id);
     
     List<E> selectAll(@Param("pager") Pageable pager);
     
