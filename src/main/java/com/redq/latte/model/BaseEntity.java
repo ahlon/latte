@@ -7,12 +7,32 @@ public class BaseEntity {
     private Long id;
     
     private Date createdAt;
+    
+    private Date updatedAt;
+    
+    private boolean archive;
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public boolean isArchive() {
+		return archive;
+	}
+
+	public void setArchive(boolean archive) {
+		this.archive = archive;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public void setId(Long id) {
         this.id = id;
     }
 

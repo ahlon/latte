@@ -1,5 +1,7 @@
 package com.redq.latte.model;
 
+import com.redq.latte.model.status.UserStatus;
+
 public class User extends BaseEntity {
 	
 	private String loginname;
@@ -7,6 +9,8 @@ public class User extends BaseEntity {
 	private String password;
 	
 	private String nickname;
+	
+	private UserStatus status;
 
 	public String getLoginname() {
 		return loginname;
@@ -22,6 +26,14 @@ public class User extends BaseEntity {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public UserStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(UserStatus status) {
+		this.status = status;
 	}
 
 	public String getNickname() {

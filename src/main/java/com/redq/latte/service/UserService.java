@@ -16,7 +16,7 @@ public interface UserService {
 	
 	User updateUser(User user);
 	
-	User deleteUser(Long id);
+	User deleteUser(@NotNull Long id);
 
     User getUserById(@NotNull Long id);
     

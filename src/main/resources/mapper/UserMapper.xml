@@ -11,12 +11,12 @@
     <result column="archive" property="archive" jdbcType="BIT" />
   </resultMap>
   
-  <select id="selectById" resultType="com.redq.latte.model.User">
-    select * from user where id={id}
+  <select id="selectById" parameterType="Long" resultMap="BaseResultMap">
+    select * from user where id = #{id}
   </select>
   
-   <select id="selectAll" resultType="com.redq.latte.model.User">
-    select * from user;
+  <select id="selectAll" resultType="com.redq.latte.model.User">
+    select * from user
   </select>
   
   
