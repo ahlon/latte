@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration scan="true" scanPeriod="10 minutes">
-    <property name="LOG_FILE_NAME" value="${app.name}" />   
+    <property name="LOG_FILE_NAME" value="latte" />   
 	<contextName>${app.name}</contextName>
 
 	<appender name="LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">

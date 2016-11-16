@@ -11,13 +11,39 @@
     <result column="archive" property="archive" jdbcType="BIT" />
   </resultMap>
   
+  <insert id="insert" parameterType="com.redq.latte.model.User">
+    insert into user(loginname, passwrod, status, crated_at)
+           values(#{loginname}, #{passwrod}, #{status}, now())
+  </insert>
+  
+  <update id="update" parameterType="com.redq.latte.model.User">
+    update user set user_name=#{userName},age=#{age} where id=#{id}
+  </update>
+  
+  <update id="updateFiels">
+	  update user
+	 <trim prefix="set" suffixOverrides=",">
+	  <if test="srcId!=null">SRC_ID=#{srcId},</if>
+	  <if test="srcType!=null">SRC_TYPE=#{srcType},</if>
+	  <if test="destId!=null">DEST_ID=#{destId},</if>
+	  <if test="destType!=null">DEST_TYPE=#{destType},</if>
+	  <if test="relType!=null">REL_TYPE=#{relType},</if>
+	  <if test="status!=null">STATUS=#{status},</if>
+	  <if test="snId!=null">SN_ID=#{snId},</if>
+	 </trim>
+	 WHERE id=#{id}
+  </update>
+    
   <select id="selectById" parameterType="Long" resultMap="BaseResultMap">
-    select * from user where id = #{id}
+    select * from user where id=#{id}
+  </select>
+  
+  <select id="selectOne" parameterType="Long" resultMap="BaseResultMap">
+    select * from user where id=#{id}
   </select>
   
   <select id="selectAll" resultType="com.redq.latte.model.User">
     select * from user
   </select>
-  
   
 </mapper>

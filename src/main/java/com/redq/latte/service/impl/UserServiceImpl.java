@@ -20,11 +20,40 @@ public class UserServiceImpl extends BaseService implements UserService {
 	@Override
 	public User createUser(User user) {
 		userMapper.insert(user);
+		return user;
+	}
+
+	@Override
+	public User updateUserPassword(Long userId, String oldPwd, String newPwd) {
+		User user = getUserById(userId);
+		
+				
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public User updateUser(User user) {
+	public User resetUserPassword(String passwrod) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User activateUser(Long userId) {
+//		User user = 
+//		userMapper.update(entity)
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User freezeUser(Long userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User unfrozenUser(Long userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

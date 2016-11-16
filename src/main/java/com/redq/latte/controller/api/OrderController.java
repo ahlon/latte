@@ -1,7 +1,5 @@
 package com.redq.latte.controller.api;
 
-import io.swagger.annotations.Api;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +14,8 @@ import com.redq.latte.common.response.RestDataResponse;
 import com.redq.latte.controller.form.SearchOrderForm;
 import com.redq.latte.model.Order;
 import com.redq.latte.service.OrderService;
+
+import io.swagger.annotations.Api;
 
 @Api(value = "order")
 @RestController

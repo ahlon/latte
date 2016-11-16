@@ -6,18 +6,19 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.data.domain.Pageable;
 
 import com.redq.latte.model.BaseEntity;
-import com.redq.latte.model.Order;
 
-public interface CrudMapper<E extends BaseEntity> {
+public interface CrudMapper<T extends BaseEntity> {
 
-    int insert(E record);
+    int insert(T entity);
     
-    E selectById(@Param("id") Long id);
-    
-    List<E> selectAll(@Param("pager") Pageable pager);
-    
-    int updateById(Order record);
+    int update(T entity);
 
     int deleteById(Long id);
+    
+    T selectById(@Param("id") Long id);
+    
+    List<T> selectAll(@Param("pager") Pageable pager);
+    
+    List<T> selectPage(@Param("entity") T object, @Param("offset") int offset, @Param("limit") int limit);
     
 }

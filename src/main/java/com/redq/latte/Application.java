@@ -22,6 +22,5 @@ public class Application {
         for (String profile : activeProfiles) {
             logger.info("Spring Boot using profile:{}" , profile);
         }
-        
     }
 }

@@ -640,7 +640,8 @@ public class Order extends BaseEntity {
      *
      * @mbggenerated
      */
-    public Date getCreatedAt() {
+    @Override
+	public Date getCreatedAt() {
         return createdAt;
     }
 
@@ -652,7 +653,8 @@ public class Order extends BaseEntity {
      *
      * @mbggenerated
      */
-    public void setCreatedAt(Date createdAt) {
+    @Override
+	public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -664,7 +666,8 @@ public class Order extends BaseEntity {
      *
      * @mbggenerated
      */
-    public Date getUpdatedAt() {
+    @Override
+	public Date getUpdatedAt() {
         return updatedAt;
     }
 
@@ -676,7 +679,8 @@ public class Order extends BaseEntity {
      *
      * @mbggenerated
      */
-    public void setUpdatedAt(Date updatedAt) {
+    @Override
+	public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 
