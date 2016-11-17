@@ -1,7 +1,3 @@
-/**
- * Ouer.com Inc.
- * Copyright (c) 2014-2015 All Rights Reserved.
- */
 package com.redq.latte.controller.api;
 
 import java.util.List;

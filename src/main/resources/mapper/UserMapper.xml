@@ -11,7 +11,7 @@
     <result column="archive" property="archive" jdbcType="BIT" />
   </resultMap>
   
-  <insert id="insert" parameterType="com.redq.latte.model.User">
+  <insert id="insert" parameterType="com.redq.latte.model.User" useGeneratedKeys="true" keyProperty="id">
     insert into user(loginname, passwrod, status, crated_at)
            values(#{loginname}, #{passwrod}, #{status}, now())
   </insert>

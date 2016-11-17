@@ -1,3 +1,5 @@
 spirng boot
 mybatis
 spring security
+
+using aliyun maven mirror
