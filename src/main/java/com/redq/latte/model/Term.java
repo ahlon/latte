@@ -1,6 +1,4 @@
-package com.redq.latte.model.common;
-
-import com.redq.latte.model.BaseEntity;
+package com.redq.latte.model;
 
 public class Term extends BaseEntity {
     

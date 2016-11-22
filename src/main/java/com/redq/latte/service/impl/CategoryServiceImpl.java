@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.redq.latte.common.BaseService;
 import com.redq.latte.dal.TermMapper;
-import com.redq.latte.model.common.Term;
+import com.redq.latte.model.Term;
 import com.redq.latte.service.CategoryService;
 
 @Service
@@ -21,7 +21,7 @@ public class CategoryServiceImpl extends BaseService implements CategoryService 
     private TermMapper termMapper;
     
     @Override
-    public List<Term> listTerms() {
+    public List<Term> getAllTerms() {
         logger.info("start list terms");
         return termMapper.selectAll(null);
     }

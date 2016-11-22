@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.redq.latte.common.response.RestDataResponse;
-import com.redq.latte.model.common.Term;
+import com.redq.latte.model.Term;
 import com.redq.latte.service.CategoryService;
 
 import io.swagger.annotations.Api;
@@ -28,7 +28,7 @@ public class ApiController {
     
     @RequestMapping("/terms")
     public RestDataResponse<List<Term>> listTerms() {
-        return new RestDataResponse<List<Term>>(categoryService.listTerms());
+        return new RestDataResponse<List<Term>>(categoryService.getAllTerms());
     }
     
 }

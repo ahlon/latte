@@ -78,6 +78,13 @@ public interface UserService {
     User getUserByLoginname(String loginname);
     
     /**
+     * get users by role
+     * @param roleId
+     * @return
+     */
+    List<User> getUsersByRole(Long roleId);
+    
+    /**
 	 * search and list users by conditions
 	 * @param id
 	 * @return

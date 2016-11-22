@@ -80,4 +80,10 @@ public class UserServiceImpl extends BaseService implements UserService {
 		return userMapper.selectAll(pager);
 	}
 
+	@Override
+	public List<User> getUsersByRole(Long roleId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
