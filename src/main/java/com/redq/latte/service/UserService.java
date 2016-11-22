@@ -40,7 +40,7 @@ public interface UserService {
 	 * @param userId
 	 * @return
 	 */
-	User activateUser(Long userId);
+	User activateUser(String loginname, String code);
 	
 	/**
 	 * enable user, user can login system and operate normally

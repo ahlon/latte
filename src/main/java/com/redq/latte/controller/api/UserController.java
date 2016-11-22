@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.redq.latte.common.response.RestDataResponse;
 import com.redq.latte.controller.form.SearchOrderForm;
+import com.redq.latte.controller.form.user.UserActivateForm;
+import com.redq.latte.controller.form.user.UserRegisterForm;
 import com.redq.latte.model.User;
 import com.redq.latte.service.UserService;
 
@@ -23,18 +25,31 @@ public class UserController {
 	
 	@Autowired
     private UserService userService;
+	
+	@RequestMapping("/register")
+    public RestDataResponse<User> register(@ModelAttribute UserRegisterForm form) {
+		User user = new User();
+		user.setLoginname(form.getLoginname());
+		user.setPassword(form.getPassword());
+	    user = userService.createUser(user);
+		
+        return new RestDataResponse<User>(user);
+    }
     
     @RequestMapping("/view")
     public RestDataResponse<User> view(Long id) {
-        RestDataResponse<User> result = new RestDataResponse<User>();
-        result.setData(userService.getUserById(id));
-        return result;
+        return new RestDataResponse<User>(userService.getUserById(id));
+    }
+    
+    @RequestMapping("/activate")
+    public RestDataResponse<User> activate(UserActivateForm form) {
+    	User user = userService.activateUser(form.getLoginname(), form.getCode());
+        return new RestDataResponse<User>(user);
     }
     
     @RequestMapping("/list")
     public RestDataResponse<List<User>> list(@ModelAttribute SearchOrderForm form, Pageable pager) {
-        RestDataResponse<List<User>> result = new RestDataResponse<List<User>>();
-        result.setData(userService.findUsers(pager));
-        return result;
+        List<User> users = userService.findUsers(pager);
+    	return new RestDataResponse<List<User>>(users);
     }
 }
