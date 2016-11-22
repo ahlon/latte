@@ -6,11 +6,7 @@ package test;
 
 import org.junit.Before;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-
-import com.redq.latte.controller.api.OrderController;
-import com.redq.latte.service.OrderService;
 
 /**
  * 
@@ -20,10 +16,10 @@ import com.redq.latte.service.OrderService;
 @RunWith(MockitoJUnitRunner.class)
 public class OrderControllerTest {
 
-    @Mock
-    private OrderService orderService;
-
-    private OrderController orderController;
+//    @Mock
+//    private OrderService orderService;
+//
+//    private OrderController orderController;
 
     @Before
     public void setUp() throws Exception {

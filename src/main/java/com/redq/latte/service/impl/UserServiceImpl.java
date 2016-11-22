@@ -47,13 +47,13 @@ public class UserServiceImpl extends BaseService implements UserService {
 	}
 
 	@Override
-	public User freezeUser(Long userId) {
+	public User enableUser(Long userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public User unfrozenUser(Long userId) {
+	public User disableUser(Long userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

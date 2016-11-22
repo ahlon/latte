@@ -43,18 +43,18 @@ public interface UserService {
 	User activateUser(Long userId);
 	
 	/**
-	 * freeze user, user can not login or do anyting in the system until it is unfrozen
+	 * enable user, user can login system and operate normally
 	 * @param userId
 	 * @return
 	 */
-	User freezeUser(Long userId);
+	User enableUser(Long userId);
 	
 	/**
-	 * unfrozen user, user can login system and operate normally
+	 * disable user, user can not login or do anyting in the system until it is unfrozen
 	 * @param userId
 	 * @return
 	 */
-	User unfrozenUser(Long userId);
+	User disableUser(Long userId);
 	
 	/**
 	 * remove user logically not physically, the data is archived in db, but not show in the system

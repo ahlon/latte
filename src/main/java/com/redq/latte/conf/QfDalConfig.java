@@ -10,8 +10,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.Resource;
 
-import com.redq.latte.dal.OrderMapper;
-
 // @Configuration
 // @ImportResource({"classpath:config/applicationContext-dal.xml"})
 // @PropertySource({"classpath:application.properties", "classpath:application-${spring.profiles.active}.properties"})
@@ -45,9 +43,5 @@ public class QfDalConfig {
 		return fb.getObject();
 	}
     
-    @Bean
-    public OrderMapper orderMapper() throws Exception {
-        return newMapperFactoryBean(OrderMapper.class).getObject();
-    }
-	
+    
 }
