@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.redq.latte.common.BaseService;
-import com.redq.latte.dal.UserMapper;
+import com.redq.latte.dal.mapper.UserMapper;
 import com.redq.latte.model.User;
 import com.redq.latte.service.UserService;
 

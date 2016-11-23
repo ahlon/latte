@@ -13,8 +13,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.Resource;
 
-import com.redq.latte.dal.TermMapper;
-import com.redq.latte.dal.UserMapper;
+import com.redq.latte.dal.mapper.TermMapper;
+import com.redq.latte.dal.mapper.UserMapper;
 
 @Configuration
 @ImportResource({"classpath:config/applicationContext-dal.xml"})

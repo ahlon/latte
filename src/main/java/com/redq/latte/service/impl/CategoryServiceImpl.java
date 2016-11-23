@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.redq.latte.common.BaseService;
-import com.redq.latte.dal.TermMapper;
+import com.redq.latte.dal.mapper.TermMapper;
 import com.redq.latte.model.Term;
 import com.redq.latte.service.CategoryService;
 
