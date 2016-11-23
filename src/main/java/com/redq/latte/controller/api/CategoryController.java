@@ -21,7 +21,7 @@ import io.swagger.annotations.Api;
 @Api(value = "api")
 @RestController
 @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
-public class ApiController {
+public class CategoryController {
     
     @Autowired
     private CategoryService categoryService;

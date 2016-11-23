@@ -57,6 +57,13 @@ public interface UserService {
 	User disableUser(Long userId);
 	
 	/**
+	 * update user info
+	 * @param user
+	 * @return
+	 */
+	User updateUser(User user);
+	
+	/**
 	 * remove user logically not physically, the data is archived in db, but not show in the system
 	 * @param id
 	 * @return

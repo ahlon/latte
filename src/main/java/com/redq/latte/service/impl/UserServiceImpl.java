@@ -88,4 +88,10 @@ public class UserServiceImpl extends BaseService implements UserService {
 		return null;
 	}
 
+	@Override
+	public User updateUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

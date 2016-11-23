@@ -13,6 +13,7 @@ import com.redq.latte.common.response.RestDataResponse;
 import com.redq.latte.controller.form.SearchOrderForm;
 import com.redq.latte.controller.form.user.UserActivateForm;
 import com.redq.latte.controller.form.user.UserRegisterForm;
+import com.redq.latte.controller.form.user.UserUpdateForm;
 import com.redq.latte.model.User;
 import com.redq.latte.service.UserService;
 
@@ -36,20 +37,32 @@ public class UserController {
         return new RestDataResponse<User>(user);
     }
     
-    @RequestMapping("/view")
-    public RestDataResponse<User> view(Long id) {
-        return new RestDataResponse<User>(userService.getUserById(id));
-    }
-    
     @RequestMapping("/activate")
     public RestDataResponse<User> activate(UserActivateForm form) {
     	User user = userService.activateUser(form.getLoginname(), form.getCode());
         return new RestDataResponse<User>(user);
+    }
+	
+	@RequestMapping("/view")
+    public RestDataResponse<User> view(Long id) {
+        return new RestDataResponse<User>(userService.getUserById(id));
     }
     
     @RequestMapping("/list")
     public RestDataResponse<List<User>> list(@ModelAttribute SearchOrderForm form, Pageable pager) {
         List<User> users = userService.findUsers(pager);
     	return new RestDataResponse<List<User>>(users);
+    }
+    
+    @RequestMapping("/update")
+    public RestDataResponse<User> list(@ModelAttribute UserUpdateForm form) {
+        userService.updateUser(null);
+    	return new RestDataResponse<User>();
+    }
+    
+    @RequestMapping("/update-pwd")
+    public RestDataResponse<User> updatePassword(String oldPwd, String newPwd) {
+        userService.updateUserPassword(null, oldPwd, newPwd);
+    	return new RestDataResponse<User>();
     }
 }

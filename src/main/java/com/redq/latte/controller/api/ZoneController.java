@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.redq.latte.common.response.RestDataResponse;
-import com.redq.latte.model.User;
 import com.redq.latte.model.Zone;
 import com.redq.latte.service.ZoneService;
 
 import io.swagger.annotations.Api;
 
-@Api(value = "user")
+@Api(value = "zone")
 @RestController
 @RequestMapping(value = "/zone", method = {RequestMethod.GET, RequestMethod.POST})
 public class ZoneController {
