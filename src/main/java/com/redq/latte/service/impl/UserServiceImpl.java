@@ -1,26 +1,36 @@
 package com.redq.latte.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.redq.latte.common.BaseService;
+import com.redq.latte.dal.mapper.RoleMapper;
 import com.redq.latte.dal.mapper.UserMapper;
+import com.redq.latte.model.Role;
 import com.redq.latte.model.User;
 import com.redq.latte.service.UserService;
 
 @Service
-public class UserServiceImpl extends BaseService implements UserService {
+public class UserServiceImpl extends BaseService implements UserService, UserDetailsService {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private UserMapper userMapper;
 
+	@Autowired
+	private RoleMapper roleMapper;
+	
 	@Override
 	public User createUser(User user) {
 		userMapper.insert(user);
@@ -92,6 +102,23 @@ public class UserServiceImpl extends BaseService implements UserService {
 	public User updateUser(User user) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		User user = userMapper.selectByLoginname(username);
+        if (user == null) {
+            throw new UsernameNotFoundException("not found");
+        }
+        List<Role> roles = roleMapper.selectByUserId(user.getId());
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        for (Role role : roles) {
+        	authorities.add(new SimpleGrantedAuthority(role.getName()));
+        	logger.info("user: " + username + ", role: " + role.getName());
+		}
+        
+        return new org.springframework.security.core.userdetails.User(user.getLoginname(),
+                user.getPassword(), authorities);
 	}
 
 }
