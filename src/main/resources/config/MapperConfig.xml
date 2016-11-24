@@ -6,9 +6,10 @@
 <configuration>
     
 	<mappers>
-		<mapper resource="mapper/OrderMapper.xml" />
+		<mapper resource="mapper/RoleMapper.xml" />
 		<mapper resource="mapper/TermMapper.xml" />
 		<mapper resource="mapper/UserMapper.xml" />
+		<mapper resource="mapper/ZoneMapper.xml" />
 	</mappers>
 	
 </configuration>

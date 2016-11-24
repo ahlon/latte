@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.redq.latte.common.BaseService;
 import com.redq.latte.dal.mapper.TermMapper;
 import com.redq.latte.model.Term;
+import com.redq.latte.model.TermTaxonomy;
 import com.redq.latte.service.CategoryService;
 
 @Service
@@ -25,5 +26,11 @@ public class CategoryServiceImpl extends BaseService implements CategoryService 
         logger.info("start list terms");
         return termMapper.selectAll(null);
     }
+
+	@Override
+	public List<TermTaxonomy> getRootNodes(String taxonomyId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

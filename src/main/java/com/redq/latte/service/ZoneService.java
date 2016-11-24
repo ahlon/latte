@@ -7,5 +7,7 @@ import com.redq.latte.model.Zone;
 public interface ZoneService {
 	
 	List<Zone> getZoneListByParent(Long parentId);
+
+	List<Zone> getZonePath(Long zoneId);
 	
 }

@@ -13,8 +13,10 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.Resource;
 
+import com.redq.latte.dal.mapper.RoleMapper;
 import com.redq.latte.dal.mapper.TermMapper;
 import com.redq.latte.dal.mapper.UserMapper;
+import com.redq.latte.dal.mapper.ZoneMapper;
 
 @Configuration
 @ImportResource({"classpath:config/applicationContext-dal.xml"})
@@ -54,7 +56,12 @@ public class DalConfig {
 		return fb.getObject();
 	}
     
-    @Bean
+	@Bean
+	public RoleMapper roleMapper() throws Exception {
+		return newMapperFactoryBean(RoleMapper.class).getObject();
+	}
+
+	@Bean
     public TermMapper termMapper() throws Exception {
         return newMapperFactoryBean(TermMapper.class).getObject();
     }
@@ -62,6 +69,11 @@ public class DalConfig {
     @Bean
     public UserMapper userMapper() throws Exception {
         return newMapperFactoryBean(UserMapper.class).getObject();
+    }
+    
+    @Bean
+    public ZoneMapper zoneMapper() throws Exception {
+        return newMapperFactoryBean(ZoneMapper.class).getObject();
     }
 	
 }

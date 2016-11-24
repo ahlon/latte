@@ -23,17 +23,21 @@ public class ZoneController {
 	
 	@RequestMapping("/provinces")
     public RestDataResponse<List<Zone>> listRoots() {
-		// 1 represents China
 		Long rootId = 1L;
-		
-		// TODO
-		// zoneService.
-        return new RestDataResponse<List<Zone>>();
+		List<Zone> zones = zoneService.getZoneListByParent(rootId);
+        return new RestDataResponse<List<Zone>>(zones);
     }
 	
 	@RequestMapping("/children")
     public RestDataResponse<List<Zone>> register(Long zoneId) {
-        return new RestDataResponse<List<Zone>>();
+		List<Zone> zones = zoneService.getZoneListByParent(zoneId);
+        return new RestDataResponse<List<Zone>>(zones);
+    }
+	
+	@RequestMapping("/path")
+    public RestDataResponse<List<Zone>> path(Long zoneId) {
+		List<Zone> zones = zoneService.getZonePath(zoneId);
+        return new RestDataResponse<List<Zone>>(zones);
     }
 	
 	
