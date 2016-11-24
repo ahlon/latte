@@ -2,4 +2,4 @@ spirng boot
 mybatis
 spring security
 
-using aliyun maven mirror
+using aliyun maven mirror/Users/Ahlon/Projects/latte/package-prod.bat
