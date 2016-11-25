@@ -8,11 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.redq.latte.common.response.RestDataResponse;
 import com.redq.latte.service.FileService;
 
 import io.swagger.annotations.Api;
@@ -45,9 +43,13 @@ public class FileController {
     }  
 	
 	@RequestMapping("/fetch")
-    public RestDataResponse<String> fetch(String path) {
-		// fileService.uploadImg();
-		return null;
+    public String fetch(String url) {
+		try {
+            fileService.fetchImg(url);
+            return "You successfully uploaded " + url; 
+        } catch (Exception e) {
+            return "You failed to upload " + url + " => " + e.getMessage();  
+        }  
     }
 	
 }

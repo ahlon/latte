@@ -1,5 +1,12 @@
-package com.redq.latte.model;
+package com.redq.latte.model.cat;
 
+import com.redq.latte.model.BaseEntity;
+
+/**
+ * consider rename termtaxonomy to treenode
+ * @author Ahlon
+ *
+ */
 public class TermTaxonomy extends BaseEntity {
 	private Long termId;
 	private String termName;

@@ -32,4 +32,9 @@ public class HomeController {
         return "error";
     }
     
+    @RequestMapping("/category")
+    public String category() {
+        return "category";
+    }
+    
 }

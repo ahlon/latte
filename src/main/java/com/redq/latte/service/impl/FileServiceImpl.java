@@ -49,7 +49,7 @@ public class FileServiceImpl implements FileService {
     }
 
     @Override
-	public void uploadImg(String fileName, byte[] contents) {
+	public String uploadImg(String fileName, byte[] contents) {
 		// TODO Auto-generated method stub
 		try {
             //调用put方法上传
@@ -70,6 +70,15 @@ public class FileServiceImpl implements FileService {
                 //ignore
             }
         }
+		
+		return "";
 	}
 
+	@Override
+	public String fetchImg(String url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+    
 }

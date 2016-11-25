@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.redq.latte.common.response.RestDataResponse;
-import com.redq.latte.model.Term;
+import com.redq.latte.model.cat.Term;
+import com.redq.latte.model.cat.TermTaxonomy;
 import com.redq.latte.service.CategoryService;
 
 import io.swagger.annotations.Api;
@@ -26,9 +27,41 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
     
-    @RequestMapping("/terms")
+    @RequestMapping("/term/list")
     public RestDataResponse<List<Term>> listTerms() {
         return new RestDataResponse<List<Term>>(categoryService.getAllTerms());
     }
+    
+    @RequestMapping("/taxonomy/list")
+    public RestDataResponse<List<Term>> listTaxonomies() {
+        return new RestDataResponse<List<Term>>(categoryService.getAllTerms());
+    }
+    
+    @RequestMapping("/term-taxonomy/roots")
+    public RestDataResponse<List<TermTaxonomy>> listRootTermTaxonomies(Long taxonomyId) {
+        return new RestDataResponse<List<TermTaxonomy>>(null);
+    }
+    
+    @RequestMapping("/term-taxonomy/parent")
+    public RestDataResponse<List<TermTaxonomy>> getTermTaxonomyParent(Long termTaxonomyId) {
+        return new RestDataResponse<List<TermTaxonomy>>(null);
+    }
+    
+    @RequestMapping("/term-taxonomy/children")
+    public RestDataResponse<List<TermTaxonomy>> listTermTaxonomyChildren(Long termTaxonomyId) {
+        return new RestDataResponse<List<TermTaxonomy>>(null);
+    }
+    
+    @RequestMapping("/term-taxonomy/ancestors")
+    public RestDataResponse<List<TermTaxonomy>> listTermTaxonomyAncestors(Long termTaxonomyId) {
+        return new RestDataResponse<List<TermTaxonomy>>(null);
+    }
+    
+    @RequestMapping("/term-taxonomy/descendants")
+    public RestDataResponse<List<TermTaxonomy>> listTermTaxonomyDescendants(Long termTaxonomyId) {
+        return new RestDataResponse<List<TermTaxonomy>>(null);
+    }
+    
+    
     
 }

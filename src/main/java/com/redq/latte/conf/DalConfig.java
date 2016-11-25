@@ -15,6 +15,7 @@ import org.springframework.core.io.Resource;
 
 import com.redq.latte.dal.mapper.RoleMapper;
 import com.redq.latte.dal.mapper.TermMapper;
+import com.redq.latte.dal.mapper.TermTaxonomyMapper;
 import com.redq.latte.dal.mapper.UserMapper;
 import com.redq.latte.dal.mapper.ZoneMapper;
 
@@ -64,6 +65,11 @@ public class DalConfig {
 	@Bean
     public TermMapper termMapper() throws Exception {
         return newMapperFactoryBean(TermMapper.class).getObject();
+    }
+	
+	@Bean
+    public TermTaxonomyMapper termTaxonomyMapper() throws Exception {
+        return newMapperFactoryBean(TermTaxonomyMapper.class).getObject();
     }
     
     @Bean
