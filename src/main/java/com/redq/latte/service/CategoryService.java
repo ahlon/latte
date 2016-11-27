@@ -9,15 +9,15 @@ public interface CategoryService {
     
     List<Term> getAllTerms();
     
-    List<TermTaxonomy> getRootTermTaxonomies(String taxonomyId);
+    List<TermTaxonomy> getRootTermTaxonomies(Long taxonomyId);
     
-    List<TermTaxonomy> getTermTaxonomyParent(String taxonomyId);
+    List<TermTaxonomy> getTermTaxonomyParent(Long taxonomyId);
     
-    List<TermTaxonomy> getTermTaxonomyChildren(String taxonomyId);
+    List<TermTaxonomy> getTermTaxonomyChildren(Long taxonomyId);
     
-    List<TermTaxonomy> getTermTaxonomyAncestors(String taxonomyId);
+    List<TermTaxonomy> getTermTaxonomyAncestors(Long taxonomyId);
     
-    List<TermTaxonomy> getTermTaxonomyDescendants(String taxonomyId);
+    List<TermTaxonomy> getTermTaxonomyDescendants(Long taxonomyId);
 
 }
     

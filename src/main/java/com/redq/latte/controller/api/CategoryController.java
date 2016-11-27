@@ -39,7 +39,7 @@ public class CategoryController {
     
     @RequestMapping("/term-taxonomy/roots")
     public RestDataResponse<List<TermTaxonomy>> listRootTermTaxonomies(Long taxonomyId) {
-        return new RestDataResponse<List<TermTaxonomy>>(null);
+        return new RestDataResponse<List<TermTaxonomy>>(categoryService.getRootTermTaxonomies(taxonomyId));
     }
     
     @RequestMapping("/term-taxonomy/parent")
@@ -61,7 +61,5 @@ public class CategoryController {
     public RestDataResponse<List<TermTaxonomy>> listTermTaxonomyDescendants(Long termTaxonomyId) {
         return new RestDataResponse<List<TermTaxonomy>>(null);
     }
-    
-    
     
 }

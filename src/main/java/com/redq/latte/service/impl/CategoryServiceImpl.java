@@ -34,31 +34,31 @@ public class CategoryServiceImpl extends BaseService implements CategoryService 
     }
 
 	@Override
-	public List<TermTaxonomy> getRootTermTaxonomies(String taxonomyId) {
+	public List<TermTaxonomy> getRootTermTaxonomies(Long taxonomyId) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		return termTaxonomyMapper.selectAll(params);
 	}
 
 	@Override
-	public List<TermTaxonomy> getTermTaxonomyParent(String taxonomyId) {
+	public List<TermTaxonomy> getTermTaxonomyParent(Long taxonomyId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<TermTaxonomy> getTermTaxonomyChildren(String taxonomyId) {
+	public List<TermTaxonomy> getTermTaxonomyChildren(Long taxonomyId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<TermTaxonomy> getTermTaxonomyAncestors(String taxonomyId) {
+	public List<TermTaxonomy> getTermTaxonomyAncestors(Long taxonomyId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<TermTaxonomy> getTermTaxonomyDescendants(String taxonomyId) {
+	public List<TermTaxonomy> getTermTaxonomyDescendants(Long taxonomyId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
