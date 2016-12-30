@@ -3,11 +3,14 @@ package com.redq.latte.controller.api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.redq.latte.common.LoginEvent;
 import com.redq.latte.common.response.RestDataResponse;
+import com.redq.latte.model.User;
 import com.redq.latte.model.Zone;
 import com.redq.latte.service.ZoneService;
 
@@ -21,11 +24,17 @@ public class ZoneController {
 	@Autowired
     private ZoneService zoneService;
 	
+	@Autowired  
+    private ApplicationContext applicationContext;  
+	
 	@RequestMapping("/provinces")
     public RestDataResponse<List<Zone>> listRoots() {
 		Long rootId = 1L;
 		List<Zone> zones = zoneService.getZoneListByParent(rootId);
-        return new RestDataResponse<List<Zone>>(zones);
+		
+		applicationContext.publishEvent(new LoginEvent(new User()));
+        
+		return new RestDataResponse<List<Zone>>(zones);
     }
 	
 	@RequestMapping("/children")
@@ -39,7 +48,5 @@ public class ZoneController {
 		List<Zone> zones = zoneService.getZonePath(zoneId);
         return new RestDataResponse<List<Zone>>(zones);
     }
-	
-	
 	
 }

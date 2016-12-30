@@ -20,7 +20,7 @@ import com.redq.latte.dal.mapper.UserMapper;
 import com.redq.latte.dal.mapper.ZoneMapper;
 
 @Configuration
-@ImportResource({"classpath:config/applicationContext-dal.xml"})
+@ImportResource({"classpath:config/applicationContext-dal.xml", "classpath:config/spring-config-register.xml"})
 @PropertySource({"classpath:application.properties", "classpath:application-${spring.profiles.active}.properties"})
 // @MapperScan("com.qf.trade.dal")
 public class DalConfig {

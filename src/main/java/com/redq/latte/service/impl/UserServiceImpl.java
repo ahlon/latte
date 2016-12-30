@@ -39,7 +39,7 @@ public class UserServiceImpl extends BaseService implements UserService, UserDet
 
 	@Override
 	public User updateUserPassword(Long userId, String oldPwd, String newPwd) {
-		User user = getUserById(userId);
+		// User user = getUserById(userId);
 		// TODO Auto-generated method stub
 		return null;
 	}
