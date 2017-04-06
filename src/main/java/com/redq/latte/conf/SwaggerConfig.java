@@ -58,49 +58,13 @@ public class SwaggerConfig { //implements EnvironmentAware
     }
 
 	private ApiInfo apiInfo() {
-		Contact contact = new Contact("ahlon", "https://github.com/ahlon", "ahlon2002@gmail.coms");  
+		Contact contact = new Contact("ahlon", "https://github.com/ahlon", "ahlon2002@gmail.com");  
         return new ApiInfoBuilder()  
-                .title("Document Api")  
+                .title("Latte Api Documentation")  
                 .description("latte")  
                 .license("Apache License Version 2.0")  
                 .contact(contact)  
-                .version("2.0")  
+                .version("1.0")  
                 .build();  
     }  
-}	
-//    private final Logger log = LoggerFactory.getLogger(SwaggerConfig.class);
-//    public static final String DEFAULT_INCLUDE_PATTERN = "/order/.*";
-//    private RelaxedPropertyResolver propertyResolver;
-// 
-//    @Override
-//    public void setEnvironment(Environment environment) {
-//        this.propertyResolver = new RelaxedPropertyResolver(environment, "swagger.");
-//    }
-// 
-//    @Bean
-//    public Docket swaggerSpringfoxDocket() {
-//        log.debug("Starting Swagger");
-//        StopWatch watch = new StopWatch();
-//        watch.start();
-//        Docket swaggerSpringMvcPlugin = new Docket(DocumentationType.SWAGGER_2)
-//                .apiInfo(apiInfo())
-//                .genericModelSubstitutes(ResponseEntity.class)
-//                .select()
-//                .paths(regex(DEFAULT_INCLUDE_PATTERN)) // and by paths
-//                .build();
-//        watch.stop();
-//        log.debug("Started Swagger in {} ms", watch.getTotalTimeMillis());
-//        return swaggerSpringMvcPlugin;
-//    }
-// 
-//    private ApiInfo apiInfo() {
-//        return new ApiInfo(
-//                propertyResolver.getProperty("title"),
-//                propertyResolver.getProperty("description"),
-//                propertyResolver.getProperty("version"),
-//                propertyResolver.getProperty("termsOfServiceUrl"),
-//                propertyResolver.getProperty("contact"),
-//                propertyResolver.getProperty("license"),
-//                propertyResolver.getProperty("licenseUrl")
-//        );
-//    }
+}
