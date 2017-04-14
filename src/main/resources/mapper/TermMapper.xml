@@ -11,7 +11,7 @@
   </resultMap>
   
   <select id="selectAll" resultType="com.redq.latte.model.cat.Term">
-    select * from common_term
+    select * from term
   </select>
   
 </mapper>

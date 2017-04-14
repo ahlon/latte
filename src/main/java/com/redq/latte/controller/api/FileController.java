@@ -17,13 +17,13 @@ import io.swagger.annotations.Api;
 
 @Api(value = "file")
 @RestController
-@RequestMapping(value = "/file", method = {RequestMethod.GET, RequestMethod.POST})
+@RequestMapping(value = "/file")
 public class FileController {
 	
 	@Autowired
 	private FileService fileService;
 	
-	@RequestMapping(value="/upload", method=RequestMethod.POST)
+	@RequestMapping(value = "/upload", method=RequestMethod.POST)
     public  String upload(@RequestParam("name") String name, @RequestParam("file") MultipartFile file){  
         if (!file.isEmpty()) {
             try {
@@ -42,7 +42,7 @@ public class FileController {
         }  
     }  
 	
-	@RequestMapping("/fetch")
+	@RequestMapping(value = "/fetch", method = RequestMethod.GET)
     public String fetch(String url) {
 		try {
             fileService.fetchImg(url);

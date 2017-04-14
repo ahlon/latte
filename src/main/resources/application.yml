@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: '@profiles.active@'
+    
+jdbc:
+  minPoolSize: 2
+  maxPoolSize: 5
+  acquireIncrement: 1
+
+server:
+  port: 8080

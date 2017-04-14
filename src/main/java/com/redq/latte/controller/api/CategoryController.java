@@ -21,43 +21,42 @@ import io.swagger.annotations.Api;
  */
 @Api(value = "api")
 @RestController
-@RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
 public class CategoryController {
     
     @Autowired
     private CategoryService categoryService;
     
-    @RequestMapping("/term/list")
+    @RequestMapping(value = "/term/list", method = RequestMethod.GET)
     public RestDataResponse<List<Term>> listTerms() {
         return new RestDataResponse<List<Term>>(categoryService.getAllTerms());
     }
     
-    @RequestMapping("/taxonomy/list")
+    @RequestMapping(value = "/taxonomy/list", method = RequestMethod.GET)
     public RestDataResponse<List<Term>> listTaxonomies() {
         return new RestDataResponse<List<Term>>(categoryService.getAllTerms());
     }
     
-    @RequestMapping("/term-taxonomy/roots")
+    @RequestMapping(value = "/term-taxonomy/roots", method = RequestMethod.GET)
     public RestDataResponse<List<TermTaxonomy>> listRootTermTaxonomies(Long taxonomyId) {
         return new RestDataResponse<List<TermTaxonomy>>(categoryService.getRootTermTaxonomies(taxonomyId));
     }
     
-    @RequestMapping("/term-taxonomy/parent")
+    @RequestMapping(value = "/term-taxonomy/parent", method = RequestMethod.GET)
     public RestDataResponse<List<TermTaxonomy>> getTermTaxonomyParent(Long termTaxonomyId) {
         return new RestDataResponse<List<TermTaxonomy>>(null);
     }
     
-    @RequestMapping("/term-taxonomy/children")
+    @RequestMapping(value = "/term-taxonomy/children", method = RequestMethod.GET)
     public RestDataResponse<List<TermTaxonomy>> listTermTaxonomyChildren(Long termTaxonomyId) {
         return new RestDataResponse<List<TermTaxonomy>>(null);
     }
     
-    @RequestMapping("/term-taxonomy/ancestors")
+    @RequestMapping(value = "/term-taxonomy/ancestors", method = RequestMethod.GET)
     public RestDataResponse<List<TermTaxonomy>> listTermTaxonomyAncestors(Long termTaxonomyId) {
         return new RestDataResponse<List<TermTaxonomy>>(null);
     }
     
-    @RequestMapping("/term-taxonomy/descendants")
+    @RequestMapping(value = "/term-taxonomy/descendants", method = RequestMethod.GET)
     public RestDataResponse<List<TermTaxonomy>> listTermTaxonomyDescendants(Long termTaxonomyId) {
         return new RestDataResponse<List<TermTaxonomy>>(null);
     }

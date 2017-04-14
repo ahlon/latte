@@ -16,7 +16,7 @@
   </resultMap>
   
   <select id="selectAll" resultType="com.redq.latte.model.cat.TermTaxonomy">
-    select * from term_taxonomy 
+    select * from term_taxonomy
   </select>
   
   <select id="selectRoots" resultType="com.redq.latte.model.cat.TermTaxonomy">

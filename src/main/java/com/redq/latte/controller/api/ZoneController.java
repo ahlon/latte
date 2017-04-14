@@ -18,7 +18,7 @@ import io.swagger.annotations.Api;
 
 @Api(value = "zone")
 @RestController
-@RequestMapping(value = "/zone", method = {RequestMethod.GET, RequestMethod.POST})
+@RequestMapping(value = "/zone")
 public class ZoneController {
 
 	@Autowired
@@ -27,7 +27,7 @@ public class ZoneController {
 	@Autowired  
     private ApplicationContext applicationContext;  
 	
-	@RequestMapping("/provinces")
+	@RequestMapping(value = "/provinces", method = RequestMethod.GET)
     public RestDataResponse<List<Zone>> listRoots() {
 		Long rootId = 1L;
 		List<Zone> zones = zoneService.getZoneListByParent(rootId);
@@ -37,13 +37,13 @@ public class ZoneController {
 		return new RestDataResponse<List<Zone>>(zones);
     }
 	
-	@RequestMapping("/children")
+	@RequestMapping(value = "/children", method = RequestMethod.GET)
     public RestDataResponse<List<Zone>> register(Long zoneId) {
 		List<Zone> zones = zoneService.getZoneListByParent(zoneId);
         return new RestDataResponse<List<Zone>>(zones);
     }
 	
-	@RequestMapping("/path")
+	@RequestMapping(value = "/path", method = RequestMethod.GET)
     public RestDataResponse<List<Zone>> path(Long zoneId) {
 		List<Zone> zones = zoneService.getZonePath(zoneId);
         return new RestDataResponse<List<Zone>>(zones);

@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.Resource;
 
@@ -21,7 +20,7 @@ import com.redq.latte.dal.mapper.ZoneMapper;
 
 @Configuration
 @ImportResource({"classpath:config/applicationContext-dal.xml", "classpath:config/spring-config-register.xml"})
-@PropertySource({"classpath:application.properties", "classpath:application-${spring.profiles.active}.properties"})
+// @PropertySource({"classpath:application.properties", "classpath:application-${spring.profiles.active}.properties"})
 // @MapperScan("com.qf.trade.dal")
 public class DalConfig {
 	
