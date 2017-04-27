@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -23,7 +24,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-    private Integer maxPageSize = 100;
+    private static Integer MAX_PAGE_SIZE = 200;
 
 //    @Override
 //    public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -33,14 +34,17 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
         PageableHandlerMethodArgumentResolver resolver = new PageableHandlerMethodArgumentResolver();
-        resolver.setMaxPageSize(maxPageSize);
+        // resolver.setFallbackPageable(new PageRequest(0, 30));
+        resolver.setMaxPageSize(MAX_PAGE_SIZE);
+        resolver.setOneIndexedParameters(true);
         argumentResolvers.add(resolver);
+        // PageableArgumentResolver resolver = new PageableArgumentResolver();
     }
     
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
+    	registry.addViewController("/").setViewName("home");
         registry.addViewController("/home").setViewName("home");
-        // registry.addViewController("/").setViewName("home");
         registry.addViewController("/hello").setViewName("hello");
         registry.addViewController("/login").setViewName("login");
     }
