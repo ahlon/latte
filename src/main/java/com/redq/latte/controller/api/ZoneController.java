@@ -20,19 +20,20 @@ import io.swagger.annotations.Api;
 
 @Api(value = "zone")
 @RestController
-@RequestMapping(value = "/zone")
+@RequestMapping(value = "/api/zone")
 public class ZoneController {
 
 	@Autowired
     private ZoneService zoneService;
 	
 	@Autowired  
-    private ApplicationContext applicationContext;  
+    private ApplicationContext applicationContext;
+	
+	private static long ROOT_ZONE_ID = 1L;
 	
 	@RequestMapping(value = "/provinces", method = RequestMethod.GET)
     public RestDataResponse<List<Zone>> listRoots() {
-		Long rootId = 1L;
-		List<Zone> zones = zoneService.getZoneListByParent(rootId);
+		List<Zone> zones = zoneService.getZoneListByParent(ROOT_ZONE_ID);
 		
 		applicationContext.publishEvent(new LoginEvent(new User()));
         

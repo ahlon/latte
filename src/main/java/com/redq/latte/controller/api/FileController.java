@@ -17,7 +17,7 @@ import io.swagger.annotations.Api;
 
 @Api(value = "file")
 @RestController
-@RequestMapping(value = "/file")
+@RequestMapping(value = "/api/file")
 public class FileController {
 	
 	@Autowired

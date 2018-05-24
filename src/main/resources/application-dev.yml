@@ -4,13 +4,6 @@ jdbc:
   username: root
   password: ahlon
 
-qf:
-  jdbc:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://10.18.10.3:3306/qf_c2c_pay?autoCommit=true&useUnicode=true&autoReconnect=true
-    username: dbviewer
-    password: ouer@20153WGb
-
 # spring.view.prefix=/WEB-INF/ftl/
 # spring.view.suffix=.ftl
 # server.contextPath=/demo-starter

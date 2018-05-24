@@ -34,7 +34,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
         PageableHandlerMethodArgumentResolver resolver = new PageableHandlerMethodArgumentResolver();
-        // resolver.setFallbackPageable(new PageRequest(0, 30));
+        resolver.setFallbackPageable(new PageRequest(1, 20));
         resolver.setMaxPageSize(MAX_PAGE_SIZE);
         resolver.setOneIndexedParameters(true);
         argumentResolvers.add(resolver);
@@ -43,9 +43,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-    	registry.addViewController("/").setViewName("home");
+    	registry.addViewController("/").setViewName("index");
         registry.addViewController("/home").setViewName("home");
-        registry.addViewController("/hello").setViewName("hello");
-        registry.addViewController("/login").setViewName("login");
     }
 }

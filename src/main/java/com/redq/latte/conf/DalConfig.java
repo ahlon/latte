@@ -27,9 +27,8 @@ public class DalConfig {
 	@Value("classpath:config/MapperConfig.xml")
 	Resource mybatisMapperConfig;
 
-//	@Value("classpath:com.qf.trade.dal/*Mapper.xml")
-	// error config
-//	Resource[] mybatisMapperLocations;
+    //	@Value("classpath:com.qf.trade.dal/*Mapper.xml")
+	//	Resource[] mybatisMapperLocations;
 
 	// @Autowired is auto by type
 	@javax.annotation.Resource(name = "dataSource")

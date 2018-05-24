@@ -19,8 +19,9 @@ import io.swagger.annotations.Api;
  * @author tonghu
  * @version $Id: HomeController.java, v 0.1 2015年9月18日 下午7:16:41 tonghu Exp $
  */
-@Api(value = "api")
+@Api(value = "category")
 @RestController
+@RequestMapping(value = "/api/category")
 public class CategoryController {
     
     @Autowired

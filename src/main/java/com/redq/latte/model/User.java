@@ -1,9 +1,16 @@
 package com.redq.latte.model;
 
+import java.io.Serializable;
+
 import com.redq.latte.model.status.UserStatus;
 
-public class User extends BaseEntity {
+public class User extends BaseEntity implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7283270502656746007L;
+
 	private String loginname;
 	
 	private String password;

@@ -23,7 +23,7 @@ public class HomeController {
     }
     
     @RequestMapping("/login")
-    public String login() {
+    public String login(String username, String password) {
         return "login";
     }
     

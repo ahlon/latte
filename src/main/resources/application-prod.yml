@@ -1,4 +1,4 @@
-jdbc:
+jdbc: 
   driverClassName: com.mysql.jdbc.Driver
   url: jdbc:mysql://127.0.0.1:3306/latte?useUnicode=true&characterEncoding=UTF-8
   username: root
