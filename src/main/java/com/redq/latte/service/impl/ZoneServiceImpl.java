@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.redq.latte.dal.mapper.ZoneMapper;
+import com.redq.latte.mapper.ZoneMapper;
 import com.redq.latte.model.Zone;
 import com.redq.latte.service.ZoneService;
 

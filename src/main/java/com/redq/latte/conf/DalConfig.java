@@ -12,11 +12,11 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.Resource;
 
-import com.redq.latte.dal.mapper.RoleMapper;
-import com.redq.latte.dal.mapper.TermMapper;
-import com.redq.latte.dal.mapper.TermTaxonomyMapper;
-import com.redq.latte.dal.mapper.UserMapper;
-import com.redq.latte.dal.mapper.ZoneMapper;
+import com.redq.latte.mapper.RoleMapper;
+import com.redq.latte.mapper.TermMapper;
+import com.redq.latte.mapper.TermTaxonomyMapper;
+import com.redq.latte.mapper.UserMapper;
+import com.redq.latte.mapper.ZoneMapper;
 
 @Configuration
 @ImportResource({"classpath:config/applicationContext-dal.xml", "classpath:config/spring-config-register.xml"})

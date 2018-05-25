@@ -1,4 +1,4 @@
-package com.redq.latte.dal.mapper;
+package com.redq.latte.mapper;
 
 import com.redq.latte.common.CrudMapper;
 import com.redq.latte.model.cat.Term;

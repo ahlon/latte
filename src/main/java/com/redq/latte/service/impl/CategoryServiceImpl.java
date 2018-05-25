@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.redq.latte.common.BaseService;
-import com.redq.latte.dal.mapper.TermMapper;
-import com.redq.latte.dal.mapper.TermTaxonomyMapper;
+import com.redq.latte.mapper.TermMapper;
+import com.redq.latte.mapper.TermTaxonomyMapper;
 import com.redq.latte.model.cat.Term;
 import com.redq.latte.model.cat.TermTaxonomy;
 import com.redq.latte.service.CategoryService;

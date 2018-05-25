@@ -1,30 +1,36 @@
 package com.redq.latte.model;
 
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
 import com.redq.latte.model.status.UserStatus;
 
-public class User extends BaseEntity implements Serializable {
+@Entity
+public class User extends BaseEntity {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7283270502656746007L;
-
-	private String loginname;
+	private static final long serialVersionUID = 5732916347208229647L;
 	
-	private String password;
+	@Column
+	private String mobile;
 	
+	@Column
 	private String nickname;
-	
+
+	@Column
+	private String password;
+ 
+	@Column
+	private String salt;
+
+	@Column
 	private UserStatus status;
 
-	public String getLoginname() {
-		return loginname;
+	public String getMobile() {
+		return mobile;
 	}
 
-	public void setLoginname(String loginname) {
-		this.loginname = loginname;
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 
 	public String getPassword() {
@@ -49,6 +55,14 @@ public class User extends BaseEntity implements Serializable {
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+	
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 
 }

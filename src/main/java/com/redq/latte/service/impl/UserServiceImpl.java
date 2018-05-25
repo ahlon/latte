@@ -9,8 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.redq.latte.common.BaseService;
-import com.redq.latte.dal.mapper.RoleMapper;
-import com.redq.latte.dal.mapper.UserMapper;
+import com.redq.latte.mapper.RoleMapper;
+import com.redq.latte.mapper.UserMapper;
 import com.redq.latte.model.User;
 import com.redq.latte.service.UserService;
 
@@ -77,8 +77,7 @@ public class UserServiceImpl extends BaseService implements UserService { // Use
 
 	@Override
 	public User getUserByLoginname(String loginname) {
-		// TODO Auto-generated method stub
-		return null;
+		return userMapper.selectByLoginname(loginname);
 	}
 
 	@Override

@@ -1,14 +1,16 @@
 package com.redq.latte.controller.form.user;
 
 public class UserRegisterForm {
-	private String loginname;
+	
+	private String mobile;
+	
 	private String password;
 	
-	public String getLoginname() {
-		return loginname;
+	public String getMobile() {
+		return mobile;
 	}
-	public void setLoginname(String loginname) {
-		this.loginname = loginname;
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 	public String getPassword() {
 		return password;
