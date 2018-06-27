@@ -20,6 +20,13 @@ public interface UserService {
 	User createUser(User user);
 	
 	/**
+	 * activate user for new registered user
+	 * @param userId
+	 * @return
+	 */
+	User activateUser(String loginname, String code);
+	
+	/**
 	 * user change password
 	 * @param userId
 	 * @param oldPwd
@@ -34,13 +41,6 @@ public interface UserService {
 	 * @return
 	 */
 	User resetUserPassword(String passwrod);
-	
-	/**
-	 * activate user for new registered user
-	 * @param userId
-	 * @return
-	 */
-	User activateUser(String loginname, String code);
 	
 	/**
 	 * enable user, user can login system and operate normally

@@ -14,6 +14,7 @@ public class Application {
     private static Logger logger = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
+    	
 //    	System.out.println("user.dir : "+System.getProperty("user.dir"));
 //    	System.out.println("user.home : "+System.getProperty("user.home"));
     	
