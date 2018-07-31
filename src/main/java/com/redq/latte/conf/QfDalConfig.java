@@ -29,7 +29,7 @@ public class QfDalConfig {
 		return b;
 	}
 	
-	@Bean 
+	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertyConfigInDev() { 
 		return new PropertySourcesPlaceholderConfigurer(); 
 	} 
